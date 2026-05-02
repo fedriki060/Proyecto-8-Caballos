@@ -24,6 +24,7 @@ public class PanelTablero extends JPanel {
     public PanelTablero() {
         tablero = new int[8][8];
         setBackground(new Color(40, 40, 40));
+        setPreferredSize(new Dimension(560, 560));
 
         addMouseMotionListener(new MouseAdapter() {
             @Override
