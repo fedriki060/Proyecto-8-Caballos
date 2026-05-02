@@ -1,5 +1,6 @@
 package Vista;
 
+import controlador.Controlador;
 import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
@@ -72,10 +73,8 @@ public class VentanaPrincipal extends JFrame {
             }
         });
 
-        JPanel wrapper = new JPanel(new GridBagLayout());
-        wrapper.setBackground(new Color(30, 30, 30));
-        wrapper.add(panelTablero);
-        add(wrapper, BorderLayout.CENTER);
+        panelTablero.setPreferredSize(new Dimension(560, 560));
+        add(panelTablero, BorderLayout.CENTER);
     }
 
     private void construirPanelSur() {
@@ -106,6 +105,80 @@ public class VentanaPrincipal extends JFrame {
         sur.add(lblEstado,   BorderLayout.NORTH);
         sur.add(gridBotones, BorderLayout.CENTER);
         add(sur, BorderLayout.SOUTH);
+
+        btnResolverVacio.addActionListener(e -> {
+            panelTablero.limpiarTablero();
+            posicionInicialElegida = false;
+            btnResolverConInicial.setEnabled(false);
+            setEstado("Buscando solución...", TipoEstado.INFO);
+            setBotonesHabilitados(false);
+
+            new SwingWorker<Boolean, Void>() {
+                @Override
+                protected Boolean doInBackground() {
+                    Controlador ctrl = new Controlador(panelTablero);
+                    return ctrl.resolverVacio();
+                }
+                @Override
+                protected void done() {
+                    try {
+                        boolean ok = get();
+                        setEstado(ok ? "✔  Solución encontrada — 8 caballos colocados"
+                                        : "✘  No se encontró solución",
+                                ok ? TipoEstado.EXITO : TipoEstado.ERROR);
+                    } catch (Exception ex) {
+                        setEstado("Error: " + ex.getMessage(), TipoEstado.ERROR);
+                    } finally {
+                        setBotonesHabilitados(true);
+                    }
+                }
+            }.execute();
+        });
+
+        btnElegirInicial.addActionListener(e -> {
+            posicionInicialElegida = false;
+            btnResolverConInicial.setEnabled(false);
+            panelTablero.activarModoSeleccion();
+            setEstado("Haz clic en el tablero para elegir la posición inicial", TipoEstado.INFO);
+        });
+
+        btnResolverConInicial.addActionListener(e -> {
+            int fila = panelTablero.getFilaInicial();
+            int col  = panelTablero.getColInicial();
+            setEstado("Buscando solución desde la posición inicial...", TipoEstado.INFO);
+            setBotonesHabilitados(false);
+
+            new SwingWorker<Boolean, Void>() {
+                @Override
+                protected Boolean doInBackground() {
+                    Controlador ctrl = new Controlador(panelTablero);
+                    return ctrl.resolverConInicial(fila, col);
+                }
+                @Override
+                protected void done() {
+                    try {
+                        boolean ok  = get();
+                        char letra  = (char) ('A' + col);
+                        int  num    = 8 - fila;
+                        setEstado(ok ? "✔  Solución encontrada partiendo de " + letra + num
+                                        : "✘  No existe solución partiendo de "  + letra + num,
+                                ok ? TipoEstado.EXITO : TipoEstado.ERROR);
+                    } catch (Exception ex) {
+                        setEstado("Error: " + ex.getMessage(), TipoEstado.ERROR);
+                    } finally {
+                        setBotonesHabilitados(true);
+                    }
+                }
+            }.execute();
+        });
+
+        btnLimpiar.addActionListener(e -> {
+            panelTablero.limpiarTablero();
+            posicionInicialElegida = false;
+            btnResolverConInicial.setEnabled(false);
+            btnElegirInicial.setText("Elegir posición inicial");
+            setEstado("Tablero limpiado — elige un modo para comenzar", TipoEstado.INFO);
+        });
     }
 
     private JButton crearBoton(String texto, Color colorFondo) {
