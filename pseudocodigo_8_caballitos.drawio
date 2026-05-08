@@ -1,0 +1,242 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36" version="28.2.7">
+  <diagram name="8 Caballos PSeInt" id="8caballos-pseint">
+    <mxGraphModel dx="1025" dy="417" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="3200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lbl-main" value="ColocarCaballos" style="text;html=1;fontSize=15;fontStyle=1;fontColor=#1a1a1a;align=center;" parent="1" vertex="1">
+          <mxGeometry x="280" y="10" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="n01" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Proceso &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;ColocarCaballos&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="240" y="46" width="320" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="a01" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="n01" target="n02" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n02" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Definir &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt;[8][8], &lt;font color=&quot;#cc0000&quot;&gt;caballosColocados &lt;/font&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Como Entero&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DDEEFF;strokeColor=#1a00cc;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="160" y="130" width="480" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a02" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n02" target="n03" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n03" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt; ← &lt;font color=&quot;#009900&quot;&gt;0&lt;/font&gt; &lt;i&gt;&lt;font color=&quot;#888888&quot;&gt;(todas las celdas vacías)&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="190" y="212" width="420" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a03" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n03" target="n04" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n04" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;caballosColocados&lt;/font&gt; = &lt;font color=&quot;#009900&quot;&gt;8&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="210" y="294" width="380" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n05" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#009900&quot;&gt;VERDADERO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="309" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a04no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n04" target="n06" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n06" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;fila&lt;/font&gt; ← &lt;font color=&quot;#009900&quot;&gt;0&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="280" y="404" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a06" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n06" target="n07" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n07" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;fila&lt;/font&gt; &lt; &lt;font color=&quot;#009900&quot;&gt;8&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="486" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a07si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n07" target="n08" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a07no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="n07" target="n_ret_false_outer" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n_ret_false_outer" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;FALSO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEEEE;strokeColor=#CC0000;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="668" y="448" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="n08" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;col&lt;/font&gt; ← &lt;font color=&quot;#009900&quot;&gt;0&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="280" y="586" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a08" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n08" target="n09" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n09" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;col&lt;/font&gt; &lt; &lt;font color=&quot;#009900&quot;&gt;8&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="260" y="668" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a09si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n09" target="n10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a09no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0.682;entryY=1.008;fontSize=12;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="n09" target="n_inc_fila" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="698" />
+              <mxPoint x="620" y="608" />
+              <mxPoint x="802" y="608" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n_inc_fila" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;fila&lt;/font&gt; ← &lt;font color=&quot;#cc0000&quot;&gt;fila&lt;/font&gt; + &lt;font color=&quot;#009900&quot;&gt;1&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="666" y="549" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a_inc_fila_back" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;entryX=1;entryY=0.5;fontSize=12;entryDx=0;entryDy=0;exitX=0.542;exitY=-0.053;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="n_inc_fila" target="n07" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="547" />
+              <mxPoint x="760" y="516" />
+            </Array>
+            <mxPoint x="758" y="581" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n10" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;esSegura&lt;/font&gt;&lt;/b&gt;(fila, col) = &lt;font color=&quot;#009900&quot;&gt;VERDADERO&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="220" y="766" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="a10si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n10" target="n11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a10no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=1;entryY=0.5;fontSize=12;" parent="1" source="n10" target="n_inc_col" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="801" />
+              <mxPoint x="660" y="854" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n11" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt;[fila][col] ← &lt;font color=&quot;#009900&quot;&gt;1&lt;/font&gt; &lt;i&gt;&lt;font color=&quot;#888888&quot;&gt;(colocar caballo)&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="874" width="400" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n11" target="n12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Llamar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;ColocarCaballos&lt;/font&gt;(caballosColocados + 1)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="180" y="956" width="440" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n12" target="n13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="&lt;font face=&quot;Courier New&quot;&gt;¿resultado = &lt;font color=&quot;#009900&quot;&gt;VERDADERO&lt;/font&gt;?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1038" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="a13si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="n13" target="n14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#009900&quot;&gt;VERDADERO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="1053" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a13no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n13" target="n15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt;[fila][col] ← &lt;font color=&quot;#009900&quot;&gt;0&lt;/font&gt; &lt;i&gt;&lt;font color=&quot;#888888&quot;&gt;(retroceso / backtrack)&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEEEE;strokeColor=#CC0000;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="190" y="1148" width="420" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a15" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="n15" target="n_inc_col" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n_inc_col" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;col&lt;/font&gt; ← &lt;font color=&quot;#cc0000&quot;&gt;col&lt;/font&gt; + &lt;font color=&quot;#009900&quot;&gt;1&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="280" y="1230" width="240" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="a_col_back" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="n_inc_col" target="n09" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="1252" />
+              <mxPoint x="120" y="698" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n_fin" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;FinProceso&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="320" y="1314" width="160" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="a_to_fin" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="n_inc_col" target="n_fin" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sep" value="" style="line;strokeColor=#888888;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="60" y="1400" width="760" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-safe" value="esSegura(fila, col)" style="text;html=1;fontSize=15;fontStyle=1;fontColor=#1a1a1a;align=center;" parent="1" vertex="1">
+          <mxGeometry x="320" y="1420" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="s01" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Proceso &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;esSegura&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="280" y="1460" width="240" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="sa01" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="s01" target="s02" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s02" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt;[fila][col] ≠ &lt;font color=&quot;#009900&quot;&gt;0&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1544" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sa02si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="s02" target="s_ret_false1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ret_false1" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;FALSO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEEEE;strokeColor=#CC0000;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="1559" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="sa02no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="s02" target="s03" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s03" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Para cada&lt;/font&gt;&lt;/b&gt; (Δfila, Δcol) &lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;en&lt;/font&gt;&lt;/b&gt; MOVIMIENTOS&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="210" y="1654" width="380" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="sa03" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="s03" target="s04" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s04" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;fa&lt;/font&gt; ← fila + Δfila&lt;br&gt;&lt;font color=&quot;#cc0000&quot;&gt;ca&lt;/font&gt; ← col + Δcol&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="250" y="1736" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sa04" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="s04" target="s05" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s05" value="&lt;font face=&quot;Courier New&quot;&gt;0 ≤ fa &lt; 8 &lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Y&lt;/font&gt;&lt;/b&gt; 0 ≤ ca &lt; 8&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1824" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sa05si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="s05" target="s06" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa05no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=1;entryY=0.5;fontSize=12;" parent="1" source="s05" target="s03" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1859" />
+              <mxPoint x="660" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s06" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#cc0000&quot;&gt;tablero&lt;/font&gt;[fa][ca] = &lt;font color=&quot;#009900&quot;&gt;1&lt;/font&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="240" y="1932" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sa06si" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="s06" target="s_ret_false2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ret_false2" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#cc0000&quot;&gt;FALSO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEEEE;strokeColor=#CC0000;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="1947" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="sa06no" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0;exitY=0.5;entryX=0;entryY=0.5;fontSize=12;" parent="1" source="s06" target="s03" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="1967" />
+              <mxPoint x="130" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s07" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;Retornar &lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#009900&quot;&gt;VERDADERO&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;strokeWidth=2;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="270" y="2044" width="260" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="sa06_fin" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" parent="1" source="s06" target="s07" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="2002" />
+              <mxPoint x="400" y="2044" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_fin" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;font color=&quot;#1a00cc&quot;&gt;FinProceso&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5CC;strokeColor=#E6A020;strokeWidth=2;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="320" y="2126" width="160" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_fin" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;" parent="1" source="s07" target="s_fin" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rS0y3F761cp4Y8bC5zMp-1" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#CC0000;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.25;fontSize=12;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="n04" target="n05">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="615" y="388" as="sourcePoint" />
+            <mxPoint x="743" y="342" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
