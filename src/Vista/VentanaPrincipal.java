@@ -6,17 +6,38 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * VentanaPrincipal — ventana principal de la aplicación.
+ *
+ * Organiza los componentes en tres zonas (BorderLayout):
+ *   NORTH  → encabezado con título
+ *   CENTER → PanelTablero (el tablero)
+ *   SOUTH  → label de estado + 4 botones
+ *
+ * Usa SwingWorker para correr el backtracking en un hilo aparte
+ * y que la ventana no se congele mientras el algoritmo trabaja.
+ */
+
 public class VentanaPrincipal extends JFrame {
 
+    // --- Componentes ---
+
+    /* El tablero visual */
     private PanelTablero panelTablero;
-    private JButton btnResolverVacio;
-    private JButton btnElegirInicial;
-    private JButton btnResolverConInicial;
-    private JButton btnLimpiar;
+    // Botones de acción
+    private JButton btnResolverVacio; // modo 1: tablero vacío
+    private JButton btnElegirInicial; // Activa el clic en el tablero
+    private JButton btnResolverConInicial; //modo 2: con posición inicial
+    private JButton btnLimpiar;  // resetea todo
+
+    /** Muestra el estado actual: neutral (gris), éxito (verde) o error (rojo). */
     private JLabel  lblEstado;
 
+    // Indica si el usuario ya eligió una celda inicial haciendo clic en el tablero.
     private boolean posicionInicialElegida = false;
 
+
+    // --- Constructor ---
     public VentanaPrincipal() {
         setTitle("Problema de los 8 Caballos — Backtracking");
         setSize(680, 780);
@@ -25,14 +46,19 @@ public class VentanaPrincipal extends JFrame {
         setLayout(new BorderLayout(10, 10));
         getContentPane().setBackground(new Color(30, 30, 30));
 
+        // Se construye en orden: encabezado → tablero → panel sur
         construirEncabezado();
         construirTablero();
         construirPanelSur();
 
+        //Centra la ventana en la pantalla
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
+    //Construcción de zonas
+
+    //zona  norte: titulo y subtíyulo decorativos
     private void construirEncabezado() {
         JPanel header = new JPanel(new BorderLayout());
         header.setBackground(new Color(20, 20, 20));
@@ -55,16 +81,22 @@ public class VentanaPrincipal extends JFrame {
         add(header, BorderLayout.NORTH);
     }
 
+    //Zona Central: El tablero, registra el listener de posición inicial también
     private void construirTablero() {
         panelTablero = new PanelTablero();
 
+        /* Cuando el usuario hace clic en el tablero en modo selección,
+         * PanelTablero lanza el evento "posicionElegida".
+         * Aquí lo capturamos para actualizar el estado y habilitar el botón.
+         */
         panelTablero.addPropertyChangeListener("posicionElegida", new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
                 posicionInicialElegida = true;
+
                 int fila = panelTablero.getFilaInicial();
                 int col  = panelTablero.getColInicial();
-                panelTablero.marcarPosicionInicial(fila, col);
+                panelTablero.marcarPosicionInicial(fila, col); // Pinta la celda elegida en azul antes de resolver
                 char letra = (char) ('A' + col);
                 int  num   = 8 - fila;
                 setEstado("Caballo inicial en " + letra + num + " — pulsa «Resolver con inicial»", TipoEstado.INFO);
@@ -77,7 +109,9 @@ public class VentanaPrincipal extends JFrame {
         add(panelTablero, BorderLayout.CENTER);
     }
 
+    //Zona sur: Label de el estado junto con lo grilla de 4 botonos
     private void construirPanelSur() {
+
         // Label de estado
         lblEstado = new JLabel("Elige un modo para comenzar", SwingConstants.CENTER);
         lblEstado.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -90,8 +124,10 @@ public class VentanaPrincipal extends JFrame {
         btnResolverConInicial = crearBoton("Resolver con inicial ♞",    new Color(160, 90, 30));
         btnLimpiar            = crearBoton("Limpiar tablero",           new Color(90, 30, 30));
 
+        //empieza deshabilitado hasta que el usuario elija una celda
         btnResolverConInicial.setEnabled(false);
 
+        //Grilla 2x2 de botones
         JPanel gridBotones = new JPanel(new GridLayout(2, 2, 10, 8));
         gridBotones.setBackground(new Color(30, 30, 30));
         gridBotones.setBorder(BorderFactory.createEmptyBorder(4, 20, 14, 20));
@@ -106,16 +142,24 @@ public class VentanaPrincipal extends JFrame {
         sur.add(gridBotones, BorderLayout.CENTER);
         add(sur, BorderLayout.SOUTH);
 
+        // --- Acciones de los botones ---
+
+        /* Modo 1: Tablero vacio
+        * Limpia el tablero, lanza el algoritmo en un hilo aparte
+        * y muestra el resultado cuando termina
+        */
+
         btnResolverVacio.addActionListener(e -> {
             panelTablero.limpiarTablero();
             posicionInicialElegida = false;
             btnResolverConInicial.setEnabled(false);
             setEstado("Buscando solución...", TipoEstado.INFO);
-            setBotonesHabilitados(false);
+            setBotonesHabilitados(false); //Deshabilita botones mienntras trabaja
 
             new SwingWorker<Boolean, Void>() {
                 @Override
                 protected Boolean doInBackground() {
+                    //Este bloque corre un hilo aparte -> la ventana no se congela
                     Controlador ctrl = new Controlador(panelTablero);
                     return ctrl.resolverVacio();
                 }
@@ -135,6 +179,11 @@ public class VentanaPrincipal extends JFrame {
             }.execute();
         });
 
+        /*
+         * Activa el modo selección en el tablero.
+         * El usuario hace clic en una celda y PanelTablero lanza el evento
+         * "posicionElegida" que capturamos arriba en construirTablero().
+         */
         btnElegirInicial.addActionListener(e -> {
             posicionInicialElegida = false;
             btnResolverConInicial.setEnabled(false);
@@ -142,6 +191,11 @@ public class VentanaPrincipal extends JFrame {
             setEstado("Haz clic en el tablero para elegir la posición inicial", TipoEstado.INFO);
         });
 
+        /*
+         * MODO 2: con posición inicial.
+         * Solo se puede pulsar después de que el usuario eligió una celda.
+         * Igual que el modo vacío pero pasa fila y col al controlador.
+         */
         btnResolverConInicial.addActionListener(e -> {
             int fila = panelTablero.getFilaInicial();
             int col  = panelTablero.getColInicial();
@@ -172,6 +226,7 @@ public class VentanaPrincipal extends JFrame {
             }.execute();
         });
 
+        /** Resetea todo: tablero, estado y botones. */
         btnLimpiar.addActionListener(e -> {
             panelTablero.limpiarTablero();
             posicionInicialElegida = false;
@@ -199,8 +254,15 @@ public class VentanaPrincipal extends JFrame {
         return btn;
     }
 
+    // --- Utilidades ---
+
+    // Los tres estados posibles
     private enum TipoEstado { INFO, EXITO, ERROR }
 
+    /**
+     * Actualiza el texto y color del label de estado.
+     * INFO = gris | EXITO = verde | ERROR = rojo
+     */
     protected void setEstado(String mensaje, TipoEstado tipo) {
         lblEstado.setText(mensaje);
         switch (tipo) {
@@ -210,6 +272,9 @@ public class VentanaPrincipal extends JFrame {
         }
     }
 
+    /* Habilita o deshabilita los botones mientras el algoritmo trabaja.
+     * btnResolverConInicial se maneja aparte porque depende de posicionInicialElegida.
+     */
     protected void setBotonesHabilitados(boolean h) {
         btnResolverVacio.setEnabled(h);
         btnElegirInicial.setEnabled(h);
